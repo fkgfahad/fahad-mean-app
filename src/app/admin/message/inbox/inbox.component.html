@@ -1,0 +1,51 @@
+<div appFadeIn>
+  <ng-template [ngIf]="spinner">
+    <spinner></spinner>
+  </ng-template>
+  <div class="ibxh" *ngIf="message && !spinner">
+    <div class="mri">
+      <h4 class="open">
+        {{ message.name }}
+      </h4>
+      <div class="eml">
+        {{ message.email }}
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <div class="mrr">
+      {{ message.date | date }}
+    </div>
+  </div>
+
+  <div class="btng">
+    <span class="spacer"></span>
+    <ng-template [ngIf]="spinner">
+      <spinner></spinner>
+    </ng-template>
+    <div *ngIf="message && !spinner" class="btn">
+      <button (click)="onReplay(message._id)" mat-raised-button color="primary">
+        Reply
+      </button>
+
+      <button (click)="onOther(message._id)" mat-button color="accent">
+        User
+      </button>
+
+      <button (click)="onTrash(message._id)" mat-raised-button color="accent">
+        Trash
+      </button>
+
+      <button (click)="onDelete(message._id)" mat-raised-button color="warn">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div *ngIf="message && !spinner" class="msc">
+    <div appFadeIn class="msg">
+      {{ message.message }}
+    </div>
+  </div>
+</div>

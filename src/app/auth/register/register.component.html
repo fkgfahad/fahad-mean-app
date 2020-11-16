@@ -1,0 +1,271 @@
+<div class="rfm">
+  <div class="cnt" [@animationRegister]="0">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Signup
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-vertical-stepper #stepper>
+        <mat-step [stepControl]="nameForm">
+          <form [formGroup]="nameForm">
+            <mat-card-content>
+              <ng-template matStepLabel>
+                Enter name
+              </ng-template>
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Enter your name"
+                  formControlName="name"
+                  autocomplete="off"
+                  spellcheck="false"
+                  autofocus
+                />
+                <mat-error *ngIf="nameForm.get('name').invalid">
+                  {{
+                    nameForm.get('name').hasError('required')
+                      ? 'Please type your name'
+                      : ''
+                  }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-footer>
+              <mat-card-actions>
+                <button
+                  type="submit"
+                  [disabled]="nameForm.get('name').invalid || nameForm.invalid"
+                  mat-raised-button
+                  matStepperNext
+                  color="primary"
+                  (click)="onFocus('emailInput')"
+                >
+                  Next
+                </button>
+              </mat-card-actions>
+            </mat-card-footer>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="emailForm">
+          <form [formGroup]="emailForm">
+            <mat-card-content>
+              <ng-template matStepLabel>
+                Enter email
+              </ng-template>
+              <mat-form-field>
+                <input
+                  type="email"
+                  matInput
+                  placeholder="Enter your email"
+                  formControlName="email"
+                  autocomplete="off"
+                  spellcheck="false"
+                  id="emailInput"
+                />
+                <mat-error *ngIf="emailForm.get('email').invalid">
+                  {{ emailError(emailForm.get('email')) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-footer>
+              <mat-card-actions>
+                <button
+                  type="button"
+                  mat-button
+                  matStepperPrevious
+                  color="primary"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  [disabled]="
+                    emailForm.get('email').invalid || emailForm.invalid
+                  "
+                  mat-raised-button
+                  matStepperNext
+                  color="primary"
+                  (click)="onFocus('passwordInput')"
+                >
+                  Next
+                </button>
+              </mat-card-actions>
+            </mat-card-footer>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="passwordForm">
+          <form [formGroup]="passwordForm">
+            <mat-card-content>
+              <ng-template matStepLabel>
+                Enter password
+              </ng-template>
+              <mat-form-field>
+                <input
+                  [type]="inputType"
+                  matInput
+                  placeholder="Enter your password"
+                  formControlName="password"
+                  autocomplete="off"
+                  spellcheck="false"
+                  id="passwordInput"
+                />
+                <mat-error *ngIf="passwordForm.get('password').invalid">
+                  {{ passError(passwordForm.get('password')) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-footer>
+              <mat-card-actions>
+                <button
+                  type="button"
+                  mat-button
+                  matStepperPrevious
+                  color="primary"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  [disabled]="
+                    passwordForm.get('password').invalid || passwordForm.invalid
+                  "
+                  mat-raised-button
+                  matStepperNext
+                  color="primary"
+                  (click)="onFocus('cpasswordInput')"
+                >
+                  Next
+                </button>
+              </mat-card-actions>
+            </mat-card-footer>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="cpasswordForm">
+          <form [formGroup]="cpasswordForm">
+            <mat-card-content>
+              <ng-template matStepLabel>
+                Re-enter password
+              </ng-template>
+              <mat-form-field>
+                <mat-hint>
+                  Your password must match
+                </mat-hint>
+                <input
+                  [type]="inputType"
+                  matInput
+                  placeholder="Re-enter your password"
+                  formControlName="cpassword"
+                  autocomplete="off"
+                  spellcheck="false"
+                  id="cpasswordInput"
+                />
+                <mat-error *ngIf="cpasswordForm.get('cpassword').invalid">
+                  {{ passError(cpasswordForm.get('cpassword')) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-footer>
+              <mat-card-actions>
+                <button
+                  type="button"
+                  mat-button
+                  matStepperPrevious
+                  color="primary"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  [disabled]="
+                    cpasswordForm.get('cpassword').invalid ||
+                    cpasswordForm.invalid ||
+                    passwordForm.get('password').value !==
+                      cpasswordForm.get('cpassword').value
+                  "
+                  mat-raised-button
+                  matStepperNext
+                  color="primary"
+                  (click)="onFocus('submitButton')"
+                >
+                  Next
+                </button>
+              </mat-card-actions>
+            </mat-card-footer>
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <mat-card-content>
+            <ng-template matStepLabel>
+              Done
+            </ng-template>
+          </mat-card-content>
+          <mat-card-footer>
+            <mat-card-actions>
+              <button
+                type="button"
+                mat-raised-button
+                color="primary"
+                [disabled]="
+                  nameForm.invalid ||
+                  emailForm.invalid ||
+                  passwordForm.invalid ||
+                  cpasswordForm.invalid ||
+                  passwordForm.get('password').value !==
+                    cpasswordForm.get('cpassword').value ||
+                  spinner
+                "
+                (click)="onRegister()"
+                id="submitButton"
+              >
+                <ng-template [ngIf]="!spinner">
+                  Signup
+                </ng-template>
+                <spinner *ngIf="spinner"></spinner>
+              </button>
+
+              <span class="spacer"></span>
+
+              <button
+                type="button"
+                color="primary"
+                mat-button
+                matStepperPrevious
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                mat-button
+                color="warn"
+                (click)="
+                  stepper.reset();
+                  nameForm.reset();
+                  emailForm.reset();
+                  passwordForm.reset();
+                  cpasswordForm.reset()
+                "
+              >
+                Reset
+              </button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </mat-step>
+      </mat-vertical-stepper>
+      <mat-card-footer>
+        <mat-card-actions>
+          <span class="spacer"></span>
+          <a routerLink="/auth/login" mat-stroked-button color="primary">
+            Login instead
+          </a>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

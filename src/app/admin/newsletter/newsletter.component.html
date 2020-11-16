@@ -1,0 +1,13 @@
+<div appFadeIn>
+  <div *ngIf="!newsletters">
+    No newsletter
+  </div>
+
+  <div class="cnt">
+    <div *ngIf="newsletters">
+      <pre>
+        {{ newsletters | json }}
+      </pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,199 @@
+<header>
+  <mat-toolbar>
+    <div class="navbar">
+      <div class="brand">
+        <button (click)="drawer.open()" mat-raised-button color="accent">
+          <mat-icon>
+            menu
+          </mat-icon>
+        </button>
+        <a matRipple class="brand" routerLink="/">
+          <img src="assets/img/fh.png" alt="fh" />
+        </a>
+
+        <!-- left nav menu -->
+        <div *ngIf="false" class="lnm">
+          <button
+            mat-raised-button
+            color="accent"
+            [matMenuTriggerFor]="leftMenu"
+          >
+            <mat-icon>
+              more_vert
+            </mat-icon>
+          </button>
+          <mat-menu #leftMenu="matMenu">
+            <a
+              *ngIf="(authState | async).isAuth"
+              routerLinkActive="mat-raised-button"
+              mat-button
+              color="primary"
+              routerLink="/user"
+            >
+              Profile
+              <!-- user name -->
+            </a>
+          </mat-menu>
+        </div>
+
+        <!-- left nav -->
+        <ul *ngIf="true">
+          <li>
+            <a
+              *ngIf="(authState | async).isAuth"
+              routerLinkActive="mat-raised-button"
+              mat-button
+              color="accent"
+              routerLink="/user/profile"
+            >
+              {{ (authState | async).user.name }}
+              <!-- user name -->
+            </a>
+          </li>
+          <li>
+            <a *ngIf="(authState | async).isAuth" routerLinkActive="mat-raised-button" mat-button color="accent"
+              routerLink="/user/dashboard">
+              Dashboard
+              <!-- user name -->
+            </a>
+          </li>
+        </ul>
+      </div>
+      <span class="spacer"></span>
+      <div *ngIf="false" class="rnm">
+        <button
+          mat-raised-button
+          color="accent"
+          [matMenuTriggerFor]="rightMenu"
+        >
+          <mat-icon>
+            more_vert
+          </mat-icon>
+        </button>
+        <mat-menu #rightMenu="matMenu">
+          <a
+            *ngIf="!(authState | async).isAuth"
+            routerLinkActive="mat-raised-button"
+            mat-button
+            color="primary"
+            routerLink="/auth/login"
+          >
+            Login
+          </a>
+          <a
+            *ngIf="!(authState | async).isAuth"
+            routerLinkActive="mat-raised-button"
+            mat-button
+            color="primary"
+            routerLink="/auth/register"
+          >
+            Register
+          </a>
+        </mat-menu>
+      </div>
+      <ul *ngIf="true">
+        <li *ngIf="(authState | async).isAuth && (authState | async).isAdmin">
+          <a
+            routerLinkActive="mat-raised-button"
+            mat-button
+            color="accent"
+            routerLink="/admin"
+          >
+            Admin
+          </a>
+        </li>
+
+        <li *ngIf="!(authState | async).isAuth">
+          <a
+            routerLinkActive="mat-raised-button"
+            mat-button
+            color="accent"
+            routerLink="/auth/login"
+          >
+            Login
+          </a>
+        </li>
+
+        <li *ngIf="!(authState | async).isAuth">
+          <a
+            routerLinkActive="mat-raised-button"
+            mat-button
+            color="accent"
+            routerLink="/auth/register"
+          >
+            Register
+          </a>
+        </li>
+
+        <li class="mrvr" *ngIf="(authState | async).isAuth">
+          <button color="default" mat-mini-fab [matMenuTriggerFor]="moreMenu">
+            <mat-icon>
+              more_vert
+            </mat-icon>
+          </button>
+          <mat-menu #moreMenu="matMenu" xPosition="before">
+            <a routerLink="/user" mat-menu-item>
+              Profile
+            </a>
+            <button (click)="onLogout()" mat-menu-item>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar>
+
+  <mat-drawer-container (mouseleave)="drawer.close()">
+    <mat-drawer [position]="'start'" #drawer mode="side">
+      <div class="mdh">
+        <h3 class="open">
+          Menu
+        </h3>
+        <span class="spacer"></span>
+        <button
+          type="button"
+          (click)="drawer.close()"
+          mat-raised-button
+          color="accent"
+        >
+          <mat-icon>
+            close
+          </mat-icon>
+        </button>
+      </div>
+
+      <ul class="snmi">
+        <li routerLinkActive="active">
+          <a routerLink="/about" (click)="drawer.close()">
+            About
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/skills" (click)="drawer.close()">
+            Skills
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/projects" (click)="drawer.close()">
+            Projects
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/testimonials" (click)="drawer.close()">
+            Testimonials
+          </a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/contact" (click)="drawer.close()">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </mat-drawer>
+  </mat-drawer-container>
+</header>

@@ -1,0 +1,92 @@
+<h2 mat-dialog-title class="acme mat-display-1">
+  Describe your project
+</h2>
+
+<mat-divider></mat-divider>
+
+<form [formGroup]="pdForm" (submit)="onProjectDiss()">
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>What kind of app *</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="website">Website</mat-option>
+        <mat-option value="app">Mobile app</mat-option>
+        <mat-option value="other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="number"
+        matInput
+        placeholder="Enter your budget ($)"
+        formControlName="budget"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Project duration</mat-label>
+      <mat-select formControlName="duration">
+        <mat-option value="One day">One day</mat-option>
+        <mat-option value="One week">One week</mat-option>
+        <mat-option value="One month">One month</mat-option>
+        <mat-option value="More than one month">More than one month</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Enter your name *"
+        formControlName="name"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Enter email *"
+        formControlName="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Skype" formControlName="skype" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea
+        type="text"
+        matInput
+        rows="6"
+        placeholder="Project detail *"
+        formControlName="detail"
+        #proDis
+      ></textarea>
+      <mat-hint> {{ proDis.value.length }}, 200 required </mat-hint>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-divider></mat-divider>
+  <mat-dialog-actions>
+    <button
+      [disabled]="pdForm.invalid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      Submit
+    </button>
+    <span class="spacer"></span>
+    <div class="rab">
+      <button mat-raised-button color="accent" type="reset">
+        Reset
+      </button>
+      <button mat-button color="warn" (click)="onCloseDialog()" type="button">
+        Cancel
+      </button>
+    </div>
+  </mat-dialog-actions>
+</form>

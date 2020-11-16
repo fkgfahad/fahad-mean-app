@@ -1,0 +1,48 @@
+<div class="skh">
+  <div class="cnt">
+    <h1 class="mat-display-2 tc skh1">
+      Skills
+    </h1>
+  </div>
+</div>
+
+<div class="skl">
+  <div class="cnt">
+    <h3 class="tc mat-display-1 acme">
+      Lists of Skills
+    </h3>
+    <div class="hr"></div>
+    <p class="tc open">
+      Here's the lists of those fields where I've expertise.
+    </p>
+  </div>
+
+  <div class="cnt">
+    <ng-template [ngIf]="!skills">
+      <div class="tc">No skills available.</div>
+    </ng-template>
+
+    <div [@skillsAnimate]="skillTypes.length" *ngIf="skills" class="flex-body">
+      <div skills *ngFor="let type of skillTypes" class="skbx flex-box">
+        <h4 class="open tc">
+          {{ type.toUpperCase() }}
+        </h4>
+        <div class="hr"></div>
+        <mat-list role="list">
+          <mat-list-item
+            *ngFor="
+              let skill of helper.sortSkills(
+                helper.getFeaturedSkills(skills, type)
+              )
+            "
+            role="listitem"
+            matTooltip="{{ skill.description }}"
+            [matTooltipPosition]="'before'"
+          >
+            {{ skill.value }}
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+</div>

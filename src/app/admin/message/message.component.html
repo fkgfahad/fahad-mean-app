@@ -1,0 +1,48 @@
+<div appFadeIn>
+  <div class="inbx">
+    <div class="lef">
+      <h3>
+        Messages
+      </h3>
+
+      <ng-template [ngIf]="spinner">
+        <spinner></spinner>
+      </ng-template>
+      <div *ngIf="messages && !spinner">
+        <ul>
+          <li *ngFor="let message of messages">
+            <a routerLinkActive="active" [routerLink]="[message._id]">
+              <div style="display: flex;">
+                <div>
+                  {{ message.name }}
+                  <br />
+                  <small>
+                    {{ message.email }}
+                  </small>
+                </div>
+                <span class="spacer"></span>
+                <div>
+                  <small>
+                    {{ message.date | date }}
+                  </small>
+                </div>
+              </div>
+              <div class="msg">
+                {{ message.message | shortner: 20 }}
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ng-template [ngIf]="messages.length <= 0">
+          <h4>
+            No messages
+          </h4>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="rin">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

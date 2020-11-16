@@ -1,0 +1,59 @@
+.ntc {
+  padding: 100px 0 150px;
+  background-image: linear-gradient(#0000, #0000006b);
+}
+.ntc h1 {
+  color: #fff;
+  font-weight: normal;
+  font-style: italic;
+}
+table {
+  width: 100%;
+}
+mat-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+mat-card-content.mat-card-content {
+  margin-top: 32px;
+}
+.mat-card-actions {
+  margin: 16px 0 0;
+  padding-top: 20px;
+  display: flex;
+}
+tr.mat-header-row.ng-star-inserted {
+  display: none !important;
+}
+
+.cfb {
+  background-image: linear-gradient(#00000061, #0000);
+}
+.cfb .cfbf {
+  border-radius: 5px;
+  padding: 50px 20px;
+  margin: 100px auto;
+  max-width: 1000px;
+  background-color: azure;
+}
+h2 {
+  margin: 0 !important;
+}
+
+.pfd form {
+  background-color: rgb(237, 179, 255);
+  border-radius: 10px;
+  padding: 50px 20px;
+  margin: 100px;
+}
+
+.mcp {
+  padding: 200px 0;
+}
+.mpd {
+  width: 95%;
+  margin: 30px auto;
+  max-width: 800px;
+  font-size: 18px;
+}

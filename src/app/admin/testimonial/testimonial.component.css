@@ -1,0 +1,26 @@
+.tsfm mat-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 100px auto;
+}
+mat-form-field {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.tls {
+  background-image: linear-gradient(#ffffffc7, #ffffff96, #fff0);
+  padding: 100px 0;
+}
+.tls mat-card {
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1000px;
+}
+.tls .mat-card-actions {
+  margin: 0 !important;
+  align-items: center;
+}
+.tls .mat-card-header-text {
+  margin: 0 !important;
+}

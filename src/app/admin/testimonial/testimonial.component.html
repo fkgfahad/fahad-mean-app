@@ -1,0 +1,132 @@
+<div class="cnt tsfm">
+  <mat-card>
+    <form (submit)="onSave(tstForm)" #tstForm="ngForm">
+      <mat-card-header>
+        <mat-card-title>
+          New testimonial
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            ngModel
+            matInput
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea
+            type="text"
+            rows="5"
+            name="speech"
+            placeholder="Speech"
+            ngModel
+            matInput
+            required
+          ></textarea>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <mat-card-actions>
+          <button
+            type="button"
+            (click)="tstForm.resetForm()"
+            mat-stroked-button
+            color="warn"
+          >
+            Reset
+          </button>
+          <span class="spacer"></span>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="tstForm.invalid || tfSpinner"
+          >
+            <ng-template [ngIf]="!tfSpinner">
+              Save
+            </ng-template>
+            <ng-template [ngIf]="tfSpinner">
+              <spinner></spinner>
+            </ng-template>
+          </button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>
+
+<div class="tls">
+  <div class="cnt">
+    <h3 class="tc open">
+      Testimonials
+    </h3>
+    <div class="hr"></div>
+  </div>
+  <div class="cnt">
+    <ng-template [ngIf]="tstSpinner">
+      <spinner></spinner>
+    </ng-template>
+
+    <div *ngIf="testimonials && !tstSpinner">
+      <ng-template [ngIf]="testimonials.length <= 0">
+        <h4 class="tc">
+          No Testimonials
+        </h4>
+      </ng-template>
+      <div *ngIf="testimonials.length > 0">
+        <div class="mtls">
+          <mat-card *ngFor="let tst of testimonials" class="tlt">
+            <mat-card-header>
+              <strong>{{ tst.name }}</strong>
+              <span class="spacer"></span>
+              {{ tst.date | date }}
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+              <br />
+              <p>
+                {{ tst.speech }}
+              </p>
+            </mat-card-content>
+
+            <mat-card-footer>
+              <mat-card-actions>
+                <button
+                  (click)="onDelete(tst._id)"
+                  mat-raised-button
+                  color="warn"
+                >
+                  Delete
+                </button>
+                <span class="spacer"></span>
+                <mat-slide-toggle
+                  [checked]="tst.show ? true : false"
+                  color="primary"
+                  (toggleChange)="toggleChange(tst._id, !tst.show)"
+                >
+                  Show
+                </mat-slide-toggle>
+              </mat-card-actions>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="pgn">
+      <mat-paginator
+        [length]="paginator.length"
+        [pageSize]="paginator.pageSize"
+        [pageSizeOptions]="paginator.pageSizeOptions"
+        (page)="onPaginate($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

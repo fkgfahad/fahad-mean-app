@@ -1,0 +1,29 @@
+<div class="mnd">
+  <div class="cnt">
+    <div class="mnc">
+      <div class="hdr">
+        <button (click)="onNewPortfolio()" mat-raised-button color="primary">
+          New Portfolio
+        </button>
+      </div>
+
+      <div *ngIf="!spinner && portfolios">
+        <div class="mat-display-1 tc" *ngIf="portfolios.length <= 0">
+          No portfolios
+        </div>
+
+        <div class="mat-display-1 tc" *ngIf="portfolios.length > 0">
+          <div class="pitm" *ngFor="let portfolio of portfolios" appFadeIn>
+            <h1>
+              {{ portfolio.title }}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <ng-template [ngIf]="spinner">
+        <spinner></spinner>
+      </ng-template>
+    </div>
+  </div>
+</div>

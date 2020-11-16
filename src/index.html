@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fahad Hossain | Full Stack Developer (Angular & NodeJS)</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Fahad Hossain | Full Stack Developer (Angular & NodeJS)"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta
+      name="msapplication-config"
+      content="/assets/favicons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#2a406c" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Acme|Open+Sans:300,400,700|Roboto:100,300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body,
+      canvas {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: transparent;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      body::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      canvas {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      /* spinner */
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        perspective: 2000px;
+        transform: rotateZ(0) rotateX(-30deg) rotateY(-45deg);
+      }
+      .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        transform: translate3d(0em, 3em, 1.5em);
+      }
+      .wrapper:last-child {
+        transform: rotateY(-90deg) rotateX(90deg) translate3d(0, 3em, 1.5em);
+      }
+      .wrapper:first-child {
+        transform: rotateZ(-90deg) rotateX(-90deg) translate3d(0, 3em, 1.5em);
+      }
+      .wrapper:nth-child(1) .cube {
+        background-color: #3498db;
+      }
+      .wrapper:nth-child(1) .cube:before {
+        background-color: #196090;
+      }
+      .wrapper:nth-child(1) .cube:after {
+        background-color: #217dbb;
+      }
+      .wrapper:nth-child(2) .cube {
+        background-color: #34495e;
+      }
+      .wrapper:nth-child(2) .cube:before {
+        background-color: #10161c;
+      }
+      .wrapper:nth-child(2) .cube:after {
+        background-color: #22303d;
+      }
+      .wrapper:nth-child(3) .cube {
+        background-color: #1abc9c;
+      }
+      .wrapper:nth-child(3) .cube:before {
+        background-color: #0e6252;
+      }
+      .wrapper:nth-child(3) .cube:after {
+        background-color: #148f77;
+      }
+      .cube {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        width: 3em;
+        height: 3em;
+        transform: translate3d(-1.5em, -3em, 0) scaleY(0.01);
+        animation: AnimateCube 3s infinite;
+      }
+      .cube:before,
+      .cube:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .cube:before {
+        left: 100%;
+        bottom: 0;
+        transform: rotateY(90deg);
+        transform-origin: 0 50%;
+      }
+      .cube:after {
+        left: 0;
+        bottom: 100%;
+        transform: rotateX(90deg);
+        transform-origin: 0 100%;
+      }
+      @keyframes AnimateContainer {
+        100% {
+          transform: rotateZ(360deg) rotateX(-30deg) rotateY(-45deg);
+        }
+      }
+      @keyframes AnimateCube {
+        12.5% {
+          transform: translate3d(-50%, -50%, 0) scaleY(1);
+        }
+        25% {
+          transform: translate3d(-50%, -50%, 0) scaleZ(2);
+        }
+        37.5% {
+          transform: translate3d(-50%, -50%, 0) scaleZ(1);
+        }
+        50% {
+          transform: translate3d(0, -50%, 0) scaleX(2);
+        }
+        62.5% {
+          transform: translate3d(-50%, -50%, 0) scaleX(1);
+        }
+        75% {
+          transform: translate3d(-50%, 0, 0) scaleY(2);
+        }
+        87.5% {
+          transform: translate3d(-1.5em, -3em, 0) scaleY(0.01);
+        }
+        100% {
+          transform: translate3d(-1.5em, -3em, 0) scaleY(0.01);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <fahad-hossain>
+      <div class="container">
+        <div class="wrapper">
+          <div class="cube"></div>
+        </div>
+        <div class="wrapper">
+          <div class="cube"></div>
+        </div>
+        <div class="wrapper">
+          <div class="cube"></div>
+        </div>
+      </div>
+    </fahad-hossain>
+
+    <canvas id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+
+      var shapes = [];
+      var num = 50;
+
+      var staticXpos;
+      var staticYpos;
+
+      var opt = {
+        shapecolor: '#0d980d15',
+        radius: 2,
+        distance: 300,
+        circleopacity: 1,
+        speed: 0.2
+      };
+
+      var w = (canvas.width = window.innerWidth);
+      var h = (canvas.height = window.innerHeight);
+      addEventListener('resize', function() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+      //helper functions
+      function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      function clearcanvas() {
+        ctx.clearRect(0, 0, w, h);
+      }
+
+      function getCords(e) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        };
+      }
+
+      function createShapes(Xpos, Ypos) {
+        this.x = Xpos ? Xpos : random(0, w);
+        this.y = Ypos ? Ypos : random(0, h);
+        this.speed = opt.speed;
+        this.vx = Math.cos(random(0, 360)) * this.speed;
+        this.vy = Math.sin(random(0, 360)) * this.speed;
+        this.r = opt.radius;
+        this.color = opt.shapecolor;
+        this.opacity = opt.circleopacity;
+        this.draw = function() {
+          ctx.beginPath();
+          ctx.globalCompositeOperation = 'source-over';
+          ctx.globalAlpha = this.opacity;
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        };
+        this.move = function() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x >= w || this.x <= 0) {
+            this.vx *= -1;
+          }
+          if (this.y >= h || this.y <= 0) {
+            this.vy *= -1;
+          }
+          this.x > w ? (this.x = w) : this.x;
+          this.y > h ? (this.y = h) : this.y;
+          this.x < 0 ? (this.x = 0) : this.x;
+          this.y < 0 ? (this.y = 0) : this.y;
+        };
+      }
+
+      function check(point1, rest) {
+        for (var j = 0; j < rest.length; j++) {
+          var yd = point1.y - rest[j].y;
+          var xd = point1.x - rest[j].x;
+          var d = Math.sqrt(xd * xd + yd * yd);
+          if (d < opt.distance) {
+            ctx.beginPath();
+            ctx.globalAlpha = 1 - d / opt.distance;
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.lineWidth = 1;
+            ctx.moveTo(point1.x, point1.y);
+            ctx.lineTo(rest[j].x, rest[j].y);
+            ctx.strokeStyle = opt.shapecolor;
+            ctx.lineCap = 'round';
+            ctx.closePath();
+            ctx.stroke();
+          }
+        }
+      }
+
+      function loop() {
+        clearcanvas();
+        shapes[0].x = staticXpos;
+        shapes[0].y = staticYpos;
+        shapes[0].move();
+        shapes[0].draw();
+        for (var i = 1; i < shapes.length; i++) {
+          shapes[i].move();
+          shapes[i].draw();
+          check(shapes[i], shapes);
+        }
+        window.requestAnimationFrame(loop);
+      }
+
+      function init() {
+        for (var i = 0; i < num; i++) {
+          shapes.push(new createShapes());
+        }
+        window.requestAnimationFrame(loop);
+      }
+
+      //events
+      canvas.addEventListener('mousemove', function(e) {
+        var pos = getCords(e);
+        staticXpos = pos.x;
+        staticYpos = pos.y;
+      });
+      canvas.addEventListener('click', function(e) {
+        var pos = getCords(e);
+        shapes.push(new createShapes(pos.x, pos.y));
+      });
+      canvas.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        shapes.splice(shapes.length - 1, 1);
+      });
+
+      init();
+    </script>
+  </body>
+</html>

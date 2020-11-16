@@ -1,0 +1,59 @@
+<div class="wmc">
+  <div class="cnt">
+    <h1 class="mat-display-2 tc">
+      What do my customers say
+    </h1>
+  </div>
+</div>
+
+<div class="tls">
+  <div class="cnt">
+    <div class="wmcb">
+      <h3 class="mat-display-1 tc acme">
+        Client's testimonials
+      </h3>
+      <div class="hr"></div>
+    </div>
+  </div>
+  <div class="cnt">
+    <h3 class="tc open">Happy Customers</h3>
+  </div>
+  <div class="cnt">
+    <ng-template [ngIf]="tstSpinner">
+      <spinner></spinner>
+    </ng-template>
+
+    <div *ngIf="testimonials && !tstSpinner">
+      <ng-template [ngIf]="testimonials.length <= 0">
+        <h4 class="tc">
+          No Testimonials
+        </h4>
+      </ng-template>
+      <div *ngIf="testimonials.length > 0">
+        <div [@tstAnimate]="testimonials.length" class="mtls">
+          <div *ngFor="let tst of testimonials" class="tlt">
+            <div class="tqh">
+              <span class="qt">&#8220;</span>
+              <p>
+                {{ tst.speech }}
+              </p>
+              <h4 class="open tc">
+                {{ tst.name }}
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pgn">
+      <mat-paginator
+        [length]="paginator.length"
+        [pageSize]="paginator.pageSize"
+        [pageSizeOptions]="paginator.pageSizeOptions"
+        (page)="onPaginate($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

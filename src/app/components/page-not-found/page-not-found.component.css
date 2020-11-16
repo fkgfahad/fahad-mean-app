@@ -1,0 +1,31 @@
+.nfa {
+  padding: 50px 0;
+}
+h1 {
+  color: #bbb;
+  margin: 0;
+  line-height: 1.5;
+}
+.crd {
+  padding: 150px 0;
+  background-image: linear-gradient(#000000db, #0000009e, #0000);
+}
+.pnf {
+  background-color: brown;
+  padding: 50px 0;
+  color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.pnf div {
+  margin-top: 20px;
+}
+h2 {
+  color: #ff8;
+  font-weight: 100;
+}
+.pnf h2 {
+  line-height: 1.6;
+}

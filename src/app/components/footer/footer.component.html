@@ -1,0 +1,85 @@
+<footer>
+  <div class="ftp">
+    <div class="cnt">
+      <div class="box">
+        <div class="flex">
+          <h2>Start a project</h2>
+        </div>
+        <div class="flex">
+          <p>
+            Interested in working together? We should queue up a chat. I’ll buy
+            the coffee.
+          </p>
+        </div>
+        <div class="flex">
+          <a mat-fab routerLink="/contact" (click)="onContact()">
+            Start
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fmd">
+    <div class="cnt">
+      <p class="mat-body-1 tc">
+        &#8220;Stay hungry, stay foolish.&#8221; ---<i>Steve Jobs</i>
+      </p>
+    </div>
+  </div>
+  <div class="lnk">
+    <div class="cnt">
+      <ul class="fnl">
+        <li>
+          <a class="si" href="https://github.com/fahad-the-dev" target="_blank">
+            <img src="../../../assets/img/svg/github.svg" alt="github" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="si"
+            href="https://twitter.com/fahad_the_dev"
+            target="_blank"
+          >
+            <img src="../../../assets/img/svg/twitter.svg" alt="twitter" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="si"
+            href="https://www.linkedin.com/in/fahad-the-dev"
+            target="_blank"
+          >
+            <img src="../../../assets/img/svg/linkedin.svg" alt="linkedin" />
+          </a>
+        </li>
+
+        <li>
+          <a class="si" href="mailto:fahad.the.dev@gmail.com">
+            <img src="../../../assets/img/svg/gmail.svg" alt="gmail" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="cpr">
+    <div class="cnt">
+      <p class="mat-small" *ngIf="thisYear">
+        &copy; {{ thisYear }}. All rights reserved.
+      </p>
+    </div>
+  </div>
+  <button
+    appFadeIn
+    [@scrollTop]="state"
+    class="gtt"
+    (click)="helper.scrollTo(0)"
+    mat-fab
+    color="primary"
+  >
+    <mat-icon>
+      arrow_upward
+    </mat-icon>
+  </button>
+</footer>

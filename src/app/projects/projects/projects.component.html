@@ -1,0 +1,91 @@
+<!-- <div class="crs">
+  <div class="carousel" *carousel="let source of images; let ctrl = controller">
+    <button (click)="ctrl.previous()">
+      &nbsp;
+    </button>
+
+    <img [src]="source" alt="name" />
+
+    <button (click)="ctrl.next()">
+      &nbsp;
+    </button>
+  </div>
+</div> -->
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
+    <img [src]="images[0]" alt="" />
+  </ng-template>
+
+  <ng-template carouselSlide>
+    <img [src]="images[1]" alt="" />
+  </ng-template>
+
+  <ng-template carouselSlide>
+    <img [src]="images[2]" alt="" />
+  </ng-template>
+</owl-carousel-o>
+
+<div class="rps">
+  <div class="cnt">
+    <h1 class="mat-display-1 open tc">
+      Recent Projects
+    </h1>
+    <div class="hr"></div>
+  </div>
+  <div class="cnt">
+    <ng-template [ngIf]="spinner">
+      <spinner></spinner>
+    </ng-template>
+
+    <div *ngIf="projects && !spinner">
+      <div *ngIf="projects.length <= 0">
+        <h4 class="open tc">
+          No Projects available
+        </h4>
+      </div>
+      <div
+        [@projectAnimation]="projects.length"
+        *ngIf="projects.length > 0"
+        class="pbx"
+      >
+        <div id="projectId" *ngFor="let project of projects" class="ptm fade">
+          <a
+            routerLinkActive="active"
+            matRipple
+            class="piv"
+            [routerLink]="[project.id]"
+            [matRippleUnbounded]="false"
+            [matRippleColor]="'#8a2be24d'"
+          >
+            <img [src]="project.images[0].url" [alt]="project.title" />
+            <div id="lnk">
+              <mat-icon>link</mat-icon>
+            </div>
+          </a>
+          <div class="pid tc">
+            <h3 class="acme">
+              {{ project.title }}
+            </h3>
+            <p class="open">
+              {{ project.subtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginator -->
+    <div class="pgn">
+      <mat-paginator
+        [length]="paginator.length"
+        [pageSize]="paginator.pageSize"
+        [pageSizeOptions]="paginator.pageSizeOptions"
+        (page)="onPaginator($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,9 @@
+.mat-form-field {
+  background-color: #ddd;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 5px;
+  height: auto;
+  display: block;
+}

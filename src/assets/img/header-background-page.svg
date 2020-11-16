@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3600px" height="1052px" viewBox="0 0 3600 1052" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <polygon id="path-1" points="2 0 3602 0 3600 507.433325 0 1051.87481"></polygon>
+        <linearGradient x1="14.7639008%" y1="50%" x2="94.4995271%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="53.7547832%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="14.7639008%" y1="50%" x2="94.4995271%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="14.7639008%" y1="50%" x2="94.4995271%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="55.1717953%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Style-Inventory" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WP-Rocket-Background-Black">
+            <g id="Group-5" transform="translate(-2.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#0E1B23" xlink:href="#path-1"></use>
+                <g id="Group-6" fill-opacity="0.075" opacity="0.15" mask="url(#mask-2)">
+                    <g transform="translate(1488.386330, 520.797592) rotate(2.000000) translate(-1488.386330, -520.797592) translate(-76.613670, -4.702408)">
+                        <g id="Group-3" opacity="0.49756567" style="mix-blend-mode: overlay;" transform="translate(1712.000000, 525.500000) rotate(2.000000) translate(-1712.000000, -525.500000) translate(312.000000, 49.000000)"></g>
+                        <g id="Group-4" transform="translate(0.482452, 0.430976)">
+                            <g id="Group" transform="translate(660.125165, 0.382605)">
+                                <rect id="Rectangle-3-Copy-10" fill="url(#linearGradient-3)" transform="translate(1178.801702, 523.834504) rotate(-12.000000) translate(-1178.801702, -523.834504) " x="483.696693" y="487.030191" width="1390.21002" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-11" fill="url(#linearGradient-4)" transform="translate(598.397230, 735.807723) rotate(-12.000000) translate(-598.397230, -735.807723) " x="272.217194" y="699.00341" width="652.360072" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-13" fill="url(#linearGradient-4)" transform="translate(1711.958968, 499.112869) rotate(-12.000000) translate(-1711.958968, -499.112869) " x="1412.2797" y="462.308556" width="599.358541" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-12" fill="url(#linearGradient-4)" transform="translate(534.925078, 837.903587) rotate(-12.000000) translate(-534.925078, -837.903587) " x="161.114215" y="801.099274" width="747.621725" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy" fill="url(#linearGradient-4)" transform="translate(782.792301, 232.957226) rotate(-12.000000) translate(-782.792301, -232.957226) " x="-8.91270233" y="196.152913" width="1583.41001" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-5" fill="url(#linearGradient-4)" transform="translate(1472.656561, 369.128006) rotate(-12.000000) translate(-1472.656561, -369.128006) " x="740.443792" y="332.323693" width="1464.42554" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-3" fill="url(#linearGradient-4)" transform="translate(1376.204140, 201.496884) rotate(-12.000000) translate(-1376.204140, -201.496884) " x="584.499137" y="164.692571" width="1583.41001" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-2" fill="url(#linearGradient-4)" transform="translate(1717.636283, 223.596480) rotate(-12.000000) translate(-1717.636283, -223.596480) " x="1083.74579" y="186.792167" width="1267.78099" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-17" fill="url(#linearGradient-4)" transform="translate(1791.494920, 570.811422) rotate(-12.000000) translate(-1791.494920, -570.811422) " x="1352.16509" y="534.007108" width="878.659651" height="73.6086263" rx="36.8043131"></rect>
+                            </g>
+                            <g id="Group-2" transform="translate(329.000000, 168.240875)" stroke="url(#linearGradient-5)" stroke-width="2.56880734" stroke-linecap="square" stroke-opacity="0.25">
+                                <path d="M2161.89227,86.6826015 L989.618381,336.449737" id="Line"></path>
+                                <path d="M1256.38769,461.728473 L84.1137941,711.495608" id="Line-Copy"></path>
+                                <path d="M2547.02405,96.3111004 L1374.75016,346.078236" id="Line-Copy-2"></path>
+                                <path d="M2480.42438,0.627555617 L1308.15049,250.394691" id="Line-Copy-3"></path>
+                                <path d="M1172.90145,13.4715923 L0.627555617,263.238728" id="Line-Copy-5"></path>
+                                <path d="M1745.74548,520.811042 L573.471592,770.578177" id="Line-Copy-6"></path>
+                                <path d="M2799.30141,221.822224 L1627.02751,471.589359" id="Line-Copy-7"></path>
+                            </g>
+                            <g id="Group" transform="translate(409.125165, 0.382605)">
+                                <rect id="Rectangle-3-Copy-10" fill="url(#linearGradient-3)" transform="translate(1429.801702, 523.834504) rotate(-12.000000) translate(-1429.801702, -523.834504) " x="734.696693" y="487.030191" width="1390.21002" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-11" fill="url(#linearGradient-4)" transform="translate(438.166037, 450.103075) rotate(-12.000000) translate(-438.166037, -450.103075) " x="111.986001" y="413.298762" width="652.360072" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-13" fill="url(#linearGradient-4)" transform="translate(1962.958968, 499.112869) rotate(-12.000000) translate(-1962.958968, -499.112869) " x="1663.2797" y="462.308556" width="599.358541" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-12" fill="url(#linearGradient-4)" transform="translate(373.613406, 552.655054) rotate(-12.000000) translate(-373.613406, -552.655054) " x="-0.197456252" y="515.850741" width="747.621725" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy" fill="url(#linearGradient-4)" transform="translate(1033.792301, 232.957226) rotate(-12.000000) translate(-1033.792301, -232.957226) " x="242.087298" y="196.152913" width="1583.41001" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-5" fill="url(#linearGradient-4)" transform="translate(1723.656561, 369.128006) rotate(-12.000000) translate(-1723.656561, -369.128006) " x="991.443792" y="332.323693" width="1464.42554" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-3" fill="url(#linearGradient-4)" transform="translate(1627.204140, 201.496884) rotate(-12.000000) translate(-1627.204140, -201.496884) " x="835.499137" y="164.692571" width="1583.41001" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-2" fill="url(#linearGradient-4)" transform="translate(1968.636283, 223.596480) rotate(-12.000000) translate(-1968.636283, -223.596480) " x="1334.74579" y="186.792167" width="1267.78099" height="73.6086263" rx="36.8043131"></rect>
+                                <rect id="Rectangle-3-Copy-17" fill="url(#linearGradient-4)" transform="translate(2042.494920, 570.811422) rotate(-12.000000) translate(-2042.494920, -570.811422) " x="1603.16509" y="534.007108" width="878.659651" height="73.6086263" rx="36.8043131"></rect>
+                            </g>
+                            <g id="Group-2" transform="translate(0.000000, 168.240875)" stroke="url(#linearGradient-5)" stroke-width="2.56880734" stroke-linecap="square" stroke-opacity="0.25">
+                                <path d="M2490.89227,86.6826015 L1318.61838,336.449737" id="Line"></path>
+                                <path d="M1173.68761,176.376795 L1.41371779,426.14393" id="Line-Copy"></path>
+                                <path d="M2876.02405,96.3111004 L1703.75016,346.078236" id="Line-Copy-2"></path>
+                                <path d="M2809.42438,0.627555617 L1637.15049,250.394691" id="Line-Copy-3"></path>
+                                <path d="M1501.90145,13.4715923 L329.627556,263.238728" id="Line-Copy-5"></path>
+                                <path d="M1662.68761,235.376795 L490.413718,485.14393" id="Line-Copy-6"></path>
+                                <path d="M3128.30141,221.822224 L1956.02751,471.589359" id="Line-Copy-7"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

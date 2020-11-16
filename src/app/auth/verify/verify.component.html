@@ -1,0 +1,51 @@
+<div class="forgot" *ngIf="mode === 'forgot'">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Forgot password?
+      </mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="forgotForm" (submit)="onForgotSubmition()">
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            autocomplete="false"
+            autofocus
+            spellcheck="false"
+          />
+          <mat-error>
+            {{ emailError(forgotForm.get('email')) }}
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <div class="cfb">
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="forgotForm.invalid"
+          >
+            <ng-template [ngIf]="!spinner">
+              Recovery
+            </ng-template>
+            <spinner *ngIf="spinner"></spinner>
+          </button>
+          <a routerLink="/auth/forgot">
+            Forgot Email?
+          </a>
+        </div>
+        <span class="spacer"></span>
+        <a routerLink="/auth/login" mat-stroked-button color="primary">
+          Login
+        </a>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

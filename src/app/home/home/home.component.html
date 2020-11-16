@@ -1,0 +1,288 @@
+<div class="cnt">
+  <div [@animationLogin]="0" class="bnd">
+    <div appFadeIn matRipple matRippleColor="#0f05" rollDown class="bx tc">
+      <h1 class="mat-display-3">
+        Full-Stack
+        <br />
+        <strong>Angular</strong> | <strong>NodeJS</strong>
+        <br />
+        Developer
+      </h1>
+      <button
+        (click)="helper.scrollTo(offersSection.offsetTop + 80)"
+        color="primary"
+        mat-raised-button
+      >
+        Offers
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="cntc">
+  <div class="cnt">
+    <div class="ctnx">
+      <div class="cncf">
+        <p class="tc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
+          asperiores animi numquam officia similique minus alias distinctio
+          unde. Debitis sed illo a dolores rem provident. Perspiciatis inventore
+          labore delectus mollitia?
+        </p>
+      </div>
+      <div class="cncf">
+        <a routerLink="/auth/register" mat-raised-button color="accent">
+          Hire Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grb">
+  <div class="cnt">
+    <img src="../../../assets/img/hero.png" alt="hero" />
+  </div>
+</div>
+
+<div class="mean">
+  <div class="cnt">
+    <img class="bfh" src="../../../assets/img/fahad.jpg" alt="Fahad Hossain" />
+  </div>
+  <div class="cnt tc">
+    <div class="btfh">
+      <h3 class="open name">
+        Fahad Hossain
+      </h3>
+      <p class="mat-caption">
+        Angular & MEAN Stack Developer
+      </p>
+    </div>
+  </div>
+  <div class="cnt">
+    <div class="abt">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
+      voluptatibus dolor nisi reprehenderit alias amet libero voluptatem sit
+      fugiat eaque eos facere ad, nostrum culpa necessitatibus voluptates cumque
+      ipsam aperiam?
+    </div>
+  </div>
+</div>
+
+<div class="srv" #offersSection>
+  <div class="cnt">
+    <div class="tph tc">
+      <h2 class="mat-display-2">
+        What I do
+      </h2>
+      <p class="dsp">
+        <i>Things I'm skilled at and passionate about.</i>
+      </p>
+      <div class="hr"></div>
+    </div>
+  </div>
+
+  <div class="cnt">
+    <div [appFlex]="'400px'" class="tms">
+      <div class="itm tc">
+        <mat-icon>code</mat-icon>
+        <h4 class="mat-display-1">
+          Web Application Development
+        </h4>
+        <p>Fast, responsive and engaging apps that bring your ideas to life.</p>
+      </div>
+
+      <div class="itm tc">
+        <mat-icon>smartphone</mat-icon>
+        <h4 class="mat-display-1">
+          Mobile Application Development
+        </h4>
+        <p>
+          Cross-platform apps built with efficiency and speed for Android and
+          iOS at once.
+        </p>
+      </div>
+
+      <div class="itm tc">
+        <mat-icon>settings</mat-icon>
+        <h4 class="mat-display-1">
+          API Integration & Development
+        </h4>
+        <p>
+          REST and SOAP API integration. REST API development with Node.js and
+          Loopback.
+        </p>
+      </div>
+
+      <div class="itm tc">
+        <mat-icon>cloud</mat-icon>
+        <h4 class="mat-display-1">
+          Database Design
+        </h4>
+        <p>
+          Database architectures in MongoDB, MySQL or Parse Server, always
+          aiming for performance, scale and stability.
+        </p>
+      </div>
+
+      <div class="itm tc">
+        <mat-icon>storage</mat-icon>
+        <h4 class="mat-display-1">
+          Cloud Integration
+        </h4>
+        <p>
+          Deployment of NodeJS apps, ReactJS apps and databases to leading cloud
+          platforms such as Heroku and Amazon AWS.
+        </p>
+      </div>
+
+      <!-- <div
+        matTooltip="This service is unavailable"
+        matTooltipPosition="above"
+        class="itm tc"
+      >
+        <mat-icon>attach_money</mat-icon>
+        <h4 class="mat-display-1">
+          Payment Gateway Integration
+        </h4>
+        <p>
+          Integration with the most popular Payment Gateways such as Stripe and
+          Paypal.
+        </p>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="nsl">
+  <div class="cnt">
+    <h3 class="tc mat-display-1">
+      Newsletter?
+    </h3>
+  </div>
+  <div class="cnt">
+    <form
+      [formGroup]="nlForm"
+      (submit)="onNlSubmit()"
+      class="nlb"
+      [appFlex]="'400px'"
+      *ngIf="!nlThanks"
+    >
+      <div class="flx">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter name"
+            formControlName="name"
+            autocomplete="false"
+          />
+          <mat-error *ngIf="nlForm.get('name').invalid">
+            You must type a name
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="flx">
+        <mat-form-field>
+          <input
+            type="email"
+            matInput
+            placeholder="Enter email"
+            formControlName="email"
+            autocomplete="false"
+          />
+          <mat-error *ngIf="nlForm.get('email').invalid">
+            You must type a valid email
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="flx">
+        <button
+          color="primary"
+          mat-raised-button
+          [disabled]="nlForm.invalid || nlSpinner"
+        >
+          <spinner *ngIf="nlSpinner"></spinner>
+          <span *ngIf="!nlSpinner">
+            Submit
+          </span>
+        </button>
+      </div>
+    </form>
+
+    <!-- thanks for subscription -->
+    <div appFadeIn *ngIf="nlThanks && nlMessage">
+      <h2
+        class="tc acme mat-display-1"
+        style="line-height: 2; color: brown;"
+        [ngClass]="{ 'text-green': nlMessage.color === 'green' }"
+      >
+        {{ nlMessage.message }}
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="rps">
+  <div class="cnt">
+    <div class="tph tc">
+      <h2 class="mat-display-2">
+        Projects
+      </h2>
+      <p class="dsp">
+        <i>Projects I recently worked.</i>
+      </p>
+      <div class="hr"></div>
+    </div>
+  </div>
+
+  <div class="cnt">
+    <ng-template [ngIf]="pfSpinner">
+      <spinner></spinner>
+    </ng-template>
+
+    <div *ngIf="portfolios && !pfSpinner">
+      <ng-template [ngIf]="portfolios.length <= 0">
+        <div class="tc">
+          No portfolios available
+        </div>
+      </ng-template>
+
+      <div class="pbx flex-body">
+        <div *ngFor="let portfolio of portfolios" class="ptm flex-box">
+          <a
+            appHover
+            matRipple
+            class="piv"
+            [routerLink]="['/projects', portfolio._id]"
+            [matRippleUnbounded]="false"
+            [matRippleColor]="'#8a2be24d'"
+          >
+            <img [src]="portfolio.images[0].url" [alt]="portfolio.title" />
+            <div id="lnk">
+              <mat-icon>link</mat-icon>
+            </div>
+          </a>
+          <div class="pid tc">
+            <h3 class="acme">
+              {{ portfolio.title }}
+            </h3>
+            <p class="open">
+              {{ portfolio.subtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt">
+    <div class="tc">
+      <a routerLink="/projects" mat-raised-button color="primary">
+        More
+      </a>
+    </div>
+  </div>
+</div>

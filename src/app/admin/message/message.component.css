@@ -1,0 +1,49 @@
+.inbx {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: darkmagenta;
+  height: 850px;
+}
+.lef {
+  width: 20%;
+  min-width: 300px;
+  overflow-y: auto;
+}
+.lef h3 {
+  margin: 0;
+  padding: 10px;
+  line-height: 1.8;
+  color: #fff;
+}
+.lef ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.lef ul li {
+  margin: 0;
+  padding: 0;
+  height: 90px;
+  border-top: 1px solid #fff3;
+}
+.lef ul li a {
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+.lef ul li a:active,
+.lef ul li a:hover,
+.lef ul li a.active {
+  background-color: #792e75;
+}
+.rin {
+  flex: 1;
+  border-left: 1px solid #fff3;
+  overflow-y: auto;
+}

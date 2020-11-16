@@ -1,0 +1,23 @@
+mat-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transform: rotateX(12deg) rotateY(-35deg) translate(-50%, -50%) scale(1)
+    skew(0deg);
+  width: 100%;
+  max-width: 500px;
+}
+.mat-card-actions .mat-button,
+.mat-card-actions .mat-raised-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  color: darkblue;
+}
+mat-card-header {
+  color: brown !important;
+}

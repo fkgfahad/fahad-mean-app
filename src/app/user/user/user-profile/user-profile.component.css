@@ -1,0 +1,77 @@
+.upo {
+  background-image: linear-gradient(#000, #0000);
+  padding: 100px 0;
+}
+.flx {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flb1,
+.flb2 {
+  margin-top: 10px;
+}
+.flb1 {
+  width: 25%;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flb1 mat-card-content {
+  position: relative;
+  max-width: 300px;
+}
+.flb1 img {
+  background-color: #eaeaea;
+  border: 1px solid #cccccc;
+}
+.flb1 .edtImg {
+  position: absolute;
+  left: 5px;
+  bottom: 9px;
+  right: 5px;
+  transition: 0.4s;
+  display: flex;
+}
+.flb2 {
+  width: 74%;
+  margin-left: 1%;
+  min-width: 500px;
+}
+table {
+  width: 100%;
+  margin-top: 20px !important;
+  display: block;
+}
+table tbody {
+  display: block;
+}
+table tr {
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #00000014;
+}
+table tr:last-child {
+  border-bottom: none;
+}
+table th {
+  width: 25%;
+  text-align: left;
+  font-weight: normal;
+}
+table td {
+  width: 75%;
+  text-align: left;
+}
+
+form.edt {
+  margin: 30px auto !important;
+  width: 100%;
+  max-width: 600px;
+}
+mat-form-field {
+  margin: 20px 0;
+  padding: 10px 0;
+}

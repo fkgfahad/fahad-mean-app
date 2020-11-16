@@ -1,0 +1,33 @@
+<mat-drawer-container (mouseleave)="navClient.close()">
+  <mat-drawer [position]="'start'" #navClient mode="side">
+    <div class="mdh">
+      <h3 class="open">
+        Menu
+      </h3>
+      <span class="spacer"></span>
+      <button (click)="navClient.close()" mat-raised-button color="accent">
+        <mat-icon>
+          close
+        </mat-icon>
+      </button>
+    </div>
+
+    <ul class="snmi">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/user/profile">
+          Profile
+        </a>
+      </li>
+    </ul>
+  </mat-drawer>
+</mat-drawer-container>
+
+<div class="cnt">
+  <button (click)="navClient.open()" mat-raised-button color="warn">
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+</div>
+
+<router-outlet></router-outlet>

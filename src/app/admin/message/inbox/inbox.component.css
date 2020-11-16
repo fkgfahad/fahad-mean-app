@@ -1,0 +1,29 @@
+.ibxh {
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+}
+.mri h4 {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 18px;
+  font-weight: normal;
+}
+.msc {
+  padding: 10px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.msc .msg {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #00000040;
+}
+.btng {
+  display: flex;
+  padding: 10px;
+}
+.btn button {
+  margin: 0 10px;
+}

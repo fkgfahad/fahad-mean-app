@@ -1,0 +1,228 @@
+<div class="upo">
+  <div class="cnt">
+    <div *ngIf="user" class="flx">
+      <mat-card class="flb1">
+        <mat-card-content>
+          <img
+            *ngIf="!editImg || imageForm.invalid"
+            [src]="user.image"
+            [alt]="user.name"
+          />
+          <img *ngIf="editImg && imageForm.valid" [src]="preImg" />
+          <div class="edtImg">
+            <button
+              *ngIf="!editImg || imageForm.invalid"
+              (click)="profileImage.click()"
+              class="edtImg"
+              mat-mini-fab
+              color="warn"
+            >
+              <mat-icon>
+                edit
+              </mat-icon>
+            </button>
+            <button
+              *ngIf="editImg && imageForm.valid"
+              mat-raised-button
+              color="primary"
+            >
+              Save
+            </button>
+            <span class="spacer" *ngIf="editImg && imageForm.valid"></span>
+            <button
+              *ngIf="editImg && imageForm.valid"
+              mat-stroked-button
+              color="warn"
+              (click)="editImg = false"
+            >
+              Cancel
+            </button>
+            <input
+              (change)="onImageChange($event)"
+              style="visibility: hidden"
+              type="file"
+              name="image"
+              #profileImage
+            />
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="flb2">
+        <mat-card-header>
+          <mat-card-title>
+            {{ user.name }}
+            &nbsp;
+            <small>
+              {{ user.date | date }}
+            </small>
+          </mat-card-title>
+          <span class="spacer"></span>
+          <button
+            *ngIf="!editMode"
+            (click)="editMode = true"
+            mat-raised-button
+            color="primary"
+          >
+            <mat-icon>
+              edit
+            </mat-icon>
+            Edit profile
+          </button>
+          <button
+            *ngIf="editMode"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            (click)="onSave()"
+            [disabled]="userForm.invalid"
+          >
+            Save
+          </button>
+          <button
+            *ngIf="editMode"
+            (click)="editMode = false; userForm.reset()"
+            mat-stroked-button
+            color="primary"
+            type="button"
+          >
+            Cancel
+          </button>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <table *ngIf="!editMode">
+            <tbody>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <td>
+                  {{ user.name }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>
+                  Username
+                </th>
+                <td *ngIf="user.username">
+                  {{ user.username }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>
+                  Email
+                </th>
+                <td>
+                  {{ user.email }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>
+                  Company name
+                </th>
+                <td *ngIf="user.company">
+                  {{ user.company.name }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>
+                  Position
+                </th>
+                <td *ngIf="user.company">
+                  {{ user.company.position }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>
+                  City
+                </th>
+                <td *ngIf="user.company">
+                  {{ user.company.city }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form *ngIf="editMode" [formGroup]="userForm" class="edt">
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                placeholder="Name"
+                formControlName="name"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                type="email"
+                matInput
+                placeholder="Name"
+                formControlName="email"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                type="text"
+                matInput
+                placeholder="Name"
+                formControlName="username"
+              />
+            </mat-form-field>
+            <div formGroupName="company">
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Company name"
+                  formControlName="name"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Position"
+                  formControlName="position"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="City"
+                  formControlName="city"
+                />
+              </mat-form-field>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-footer>
+          <mat-card-actions>
+            <span class="spacer"></span>
+            <p style="text-align: right" class="mat-caption open">
+              All the informations of your profile are totally private. Only the
+              authority can see them.
+            </p>
+          </mat-card-actions>
+        </mat-card-footer>
+        <mat-card-footer>
+          <mat-card-actions>
+            <button (click)="onPassword()" mat-raised-button color="accent">
+              Change Password
+            </button>
+            <span class="spacer"></span>
+            <button (click)="onDelete()" mat-stroked-button color="warn">
+              Delete account
+            </button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

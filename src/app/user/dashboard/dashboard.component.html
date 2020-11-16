@@ -1,0 +1,39 @@
+<div class="main">
+  <nav class="flex-body">
+    <a
+      class="flex-box"
+      routerLink="overview"
+      matRipple
+      [matRippleCentered]="false"
+      [matRippleUnbounded]="false"
+      routerLinkActive="active"
+    >
+      Overview
+    </a>
+
+    <a
+      class="flex-box"
+      routerLink="projects"
+      matRipple
+      [matRippleCentered]="false"
+      [matRippleUnbounded]="false"
+      routerLinkActive="active"
+    >
+      Projects
+    </a>
+
+    <a
+      class="flex-box"
+      routerLink="messages"
+      matRipple
+      [matRippleCentered]="false"
+      [matRippleUnbounded]="false"
+      routerLinkActive="active"
+    >
+      Messages
+    </a>
+  </nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

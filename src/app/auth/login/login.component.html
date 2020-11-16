@@ -1,0 +1,83 @@
+<div class="lfc">
+  <div class="cnt">
+    <div [@animationLogin]="0">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            Login
+          </mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="loginForm" (submit)="onLogin()">
+          <mat-card-content>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Enter your email"
+                formControlName="email"
+                autocomplete="off"
+                spellcheck="false"
+                autofocus
+              />
+              <mat-error *ngIf="loginForm.get('email').invalid">
+                {{ emailError(loginForm.get('email')) }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                formControlName="password"
+                matInput
+                placeholder="Enter your password"
+                [type]="inputType"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <mat-icon
+                matSuffix
+                (click)="
+                  inputType === 'text'
+                    ? (inputType = 'password')
+                    : (inputType = 'text')
+                "
+              >
+                {{ inputType === 'text' ? 'visibility_off' : 'visibility' }}
+              </mat-icon>
+              <mat-error *ngIf="loginForm.get('password').invalid">
+                {{ passError(loginForm.get('password')) }}
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="cfb">
+              <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled]="loginForm.invalid || spinner"
+              >
+                <ng-template [ngIf]="!spinner">
+                  Login
+                </ng-template>
+                <spinner *ngIf="spinner"></spinner>
+              </button>
+              <a
+                [routerLink]="['/auth', 'forgot']"
+                [queryParams]="{
+                  email: loginForm.get('email').valid
+                    ? loginForm.get('email').value
+                    : null
+                }"
+              >
+                Forgot password?
+              </a>
+            </div>
+            <span class="spacer"></span>
+            <a routerLink="/auth/register" mat-stroked-button color="primary">
+              Register
+            </a>
+          </mat-card-footer>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

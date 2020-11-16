@@ -1,0 +1,12 @@
+.rfm {
+  padding: 100px 0;
+}
+mat-card.mat-card {
+  width: 700px;
+  margin: 0 auto;
+}
+.mat-card-actions {
+  display: flex;
+  margin: 10px 0;
+  padding: 0;
+}

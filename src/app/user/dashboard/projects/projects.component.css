@@ -1,0 +1,56 @@
+mat-drawer {
+  width: 300px;
+  position: fixed !important;
+  background-color: darkgreen;
+  top: 60px;
+}
+.mdh {
+  display: flex;
+  min-height: 60px;
+  background-color: darkgreen;
+}
+.mdh h3 {
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.snmi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.snmi li {
+  display: block;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgreen;
+  border-top: 1px solid #004b00;
+}
+.snmi li.active {
+  background-color: #004b00;
+}
+.snmi li a,
+.snmi li a:link,
+.snmi li a:visited {
+  font-size: 14px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-left: 10px;
+  border: 0;
+}
+.snmi li a:active,
+.snmi li a:hover {
+  border: 0;
+}

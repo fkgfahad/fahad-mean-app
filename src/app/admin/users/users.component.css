@@ -1,0 +1,38 @@
+.main {
+  padding: 20px 0;
+  background-color: #c5c5c5;
+}
+mat-expansion-panel {
+  margin: 10px 0 !important;
+}
+.usrimg {
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  box-shadow: 0 0 2px 2px #dcdcdc;
+}
+.code {
+  background-color: brown;
+  padding: 10px;
+  border-radius: 10px;
+}
+.code pre {
+  margin: 0;
+  color: #ffd747;
+  font-size: 16px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+mat-action-row button {
+  margin: 0 10px !important;
+}
+.mat-expansion-panel-header-description {
+  flex-grow: 0 !important;
+}
+.flt mat-checkbox {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+}

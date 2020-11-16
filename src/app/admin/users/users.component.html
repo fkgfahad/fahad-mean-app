@@ -1,0 +1,166 @@
+<div appFadeIn>
+  <div class="main">
+    <div class="cnt fade">
+      <h1 class="tc mat-display-1 acme">
+        Manage Users
+      </h1>
+      <div class="hr"></div>
+    </div>
+
+    <div class="cnt">
+      <div class="tc">
+        <button
+          (click)="onUnsort()"
+          mat-flat-button
+          color="accent"
+          [disabled]="!unverified && !disabled && !admin && search === ''"
+        >
+          Clear Filter
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+      <div [appFlex]="'600px'">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            name="search"
+            placeholder="Search here"
+            [(ngModel)]="search"
+            autocomplete="none"
+          />
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="flt" [appFlex]="'33%'">
+        <mat-checkbox [(ngModel)]="unverified" color="primary">
+          Not verified
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="disabled" color="primary">
+          Disabled
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="admin" color="primary">
+          Admin
+        </mat-checkbox>
+      </div>
+      <mat-divider></mat-divider>
+      <div *ngIf="users && !spinner">
+        <div *ngIf="users.length <= 0" class="tc open">
+          No user found
+        </div>
+        <mat-accordion
+          *ngIf="users && users.length > 0"
+          class="example-headers-align"
+        >
+          <mat-expansion-panel
+            *ngFor="
+              let user of users
+                | filter: unverified:disabled:admin
+                | search: search
+            "
+            hideToggle
+            appFadeIn
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title [matTooltip]="user._id">
+                {{ user.name }} &nbsp; (
+                <small class="mat-caption">
+                  {{ user.email }}
+                </small>
+                )
+              </mat-panel-title>
+              <mat-panel-description>
+                {{ user.verified ? 'Verified' : 'Not Verified' }},&nbsp;
+                {{ user.disabled ? 'Disabled' : 'Enabled' }},&nbsp;
+                {{ user.type | capitalize }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <div class="mpc">
+              <p style="text-align: right;">
+                {{ user.date | date }}
+              </p>
+              <div [appFlex]="'300px'">
+                <img class="usrimg" [src]="user.image" [alt]="user.name" />
+              </div>
+              <h2 class="tc mat-display-1 acme">
+                {{ user.name }}
+              </h2>
+              <div class="hr"></div>
+              <div class="code fade">
+                <pre>
+                {{ user | json }}
+              </pre
+                >
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <mat-action-row>
+              <!-- manage admins -->
+
+              <button
+                *ngIf="user.type === 'admin'"
+                (click)="onCancelAdmin(user._id)"
+                mat-raised-button
+                color="warn"
+              >
+                Cancel Adminship
+              </button>
+
+              <button
+                *ngIf="user.type !== 'admin'"
+                (click)="onMakeAdmin(user._id)"
+                mat-raised-button
+                color="accent"
+              >
+                Make Admin
+              </button>
+
+              <span class="spacer"></span>
+
+              <!-- manage users -->
+              <button
+                (click)="onMessage(user._id)"
+                mat-raised-button
+                color="primary"
+              >
+                Message
+              </button>
+
+              <button
+                (click)="onDisable(user._id)"
+                mat-stroked-button
+                color="acccent"
+                [disabled]="!user.email.disabled"
+              >
+                Disable
+              </button>
+
+              <button
+                (click)="onDelete(user._id)"
+                mat-raised-button
+                color="warn"
+              >
+                Delete
+              </button>
+
+              <button
+                (click)="onWarning(user._id)"
+                mat-stroked-button
+                color="warn"
+              >
+                Warning
+              </button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <ng-template [ngIf]="spinner">
+        <spinner></spinner>
+      </ng-template>
+    </div>
+  </div>
+</div>

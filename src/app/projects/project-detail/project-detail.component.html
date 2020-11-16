@@ -1,0 +1,133 @@
+<mat-drawer-container>
+  <mat-drawer [position]="'end'" #detailDrawer mode="side">
+    <div class="dhr">
+      <button (click)="closeDrawer()" mat-raised-button color="warn">
+        Close
+      </button>
+      <h3 *ngIf="portfolio">
+        {{ portfolio.title ? portfolio.title : '...' }}
+      </h3>
+    </div>
+
+    <!-- project content -->
+    <div *ngIf="portfolio" class="mdc">
+      <h4 class="psubt tc acme">Project subtitle ({{ portfolio.title }})</h4>
+      <div class="hr"></div>
+
+      <div class="pds">
+        <p class="open">
+          {{ portfolio.detail }}
+        </p>
+      </div>
+
+      <!-- source codes -->
+      <ul class="scd">
+        <li *ngFor="let source of portfolio.sourceCode">
+          <a
+            matTooltip="Github | Source code of the project."
+            [matTooltipShowDelay]="0"
+            [matTooltipHideDelay]="500"
+            [matTooltipPosition]="'above'"
+            [href]="source.url"
+            target="_blank"
+          >
+            <img
+              class="sci"
+              src="../../../assets/img/svg/github.svg"
+              alt="github"
+            />
+          </a>
+        </li>
+      </ul>
+
+      <!-- technology used -->
+
+      <h3 class="open tc">
+        Technologies used in this project
+      </h3>
+      <div class="hr"></div>
+      <div class="tcu">
+        <mat-tab-group
+          mat-stretch-tabs
+          dynamicHeight
+          color="accent"
+          backgroundColor="primary"
+        >
+          <mat-tab *ngFor="let type of skillTypes" [label]="type | capitalize">
+            <div class="tti">
+              <mat-list role="list">
+                <mat-list-item
+                  *ngFor="
+                    let skill of helper.getFeaturedSkills(
+                      portfolio.skills,
+                      type
+                    )
+                  "
+                  role="listitem"
+                >
+                  {{ skill.value }}
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </mat-tab>
+
+          <!-- <mat-tab label="Back-end">
+            <div class="tti">
+              <mat-list role="list">
+                <mat-list-item role="listitem">
+                  NodeJS
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  ExpressJS
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  Multiparty
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  JsonWebToken
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Database">
+            <div class="tti">
+              <mat-list role="list">
+                <mat-list-item role="listitem">
+                  MongoDB
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  Cloudinary
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  Firebase
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </mat-tab> -->
+        </mat-tab-group>
+      </div>
+
+      <mat-divider></mat-divider>
+      <!-- other stuffs -->
+
+      <h4 class="tc acme">
+        Project gallary
+      </h4>
+      <div *ngIf="portfolio.images.length > 0" class="piim flex-body">
+        <img
+          class="flex-box"
+          *ngFor="let img of portfolio.images"
+          [src]="img.url"
+          [alt]="portfolio.title"
+        />
+      </div>
+    </div>
+
+    <ng-template [ngIf]="!portfolio">
+      <h1>
+        No project
+      </h1>
+    </ng-template>
+  </mat-drawer>
+</mat-drawer-container>
